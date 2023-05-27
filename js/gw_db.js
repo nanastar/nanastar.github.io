@@ -183,6 +183,7 @@ function get_details(id) {
             console.log(chart_series);
        },
        error: function(response){
+            create_chart();
             console.log(response);
             close_load();
        },
