@@ -1,4 +1,4 @@
-var url_id = '046e-158-140-182-90';   
+var url_id = 'd45c-158-140-182-90';   
 var id_list = [];     
 $(document).ready(function(){
     // get_data_chart();
