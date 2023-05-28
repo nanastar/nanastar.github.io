@@ -21,12 +21,24 @@ $(document).ready(function(){
     // get_top_category('container');
     // get_top_product('container2')
     // get_data_summary();
-    $(".search_btn").click(function() {
-        search();
+    $("#search_btn").click(function() {
+        var keywords = $("#searchbar").val();
+        search(keywords);
     });
-    $(".searchbar").keypress(function(event) {
+    $("#searchbar").keypress(function(event) {
+        if (event.keyCode == 13) {    
+            var keywords = $("#searchbar").val();
+            search(keywords);
+        }
+    });
+    $("#search_btn_2").click(function() {
+        var keywords = $("#searchbar_2").val();
+        search(keywords);
+    });
+    $("#searchbar_2").keypress(function(event) {
         if (event.keyCode == 13) {
-            search();
+            var keywords = $("#searchbar_2").val();
+            search(keywords);
         }
     });
 });
@@ -37,13 +49,13 @@ function loading() {
 function close_load() {
   document.getElementById("overlay").style.display = "none";
 }
-function search() {
+function search(keywords) {
     // loading();
     $('#example').hide();
     $('#loading_modal').show();
     $('#example').DataTable().destroy();
     $('#search_res_modal').modal('show')
-    var keyword = $("#searchbar").val();
+    var keyword = keywords;
     var type = $("#sort_filter").val();
     var gw = $("#filter_gw").val();
     jQuery.ajax({
