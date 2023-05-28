@@ -21,10 +21,10 @@ $(document).ready(function(){
     // get_top_category('container');
     // get_top_product('container2')
     // get_data_summary();
-    $("#search_btn").click(function() {
+    $(".search_btn").click(function() {
         search();
     });
-    $("#searchbar").keypress(function(event) {
+    $(".searchbar").keypress(function(event) {
         if (event.keyCode == 13) {
             search();
         }
